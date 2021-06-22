@@ -1,0 +1,110 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*start pseudo element part 1*/
+ul li{
+	list-style-type: none;
+	/*background-color: orange;*/
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 2px solid orange;
+	position: relative;
+}
+ul li::before{
+	content: "";
+	height: inherit;
+	width: inherit;
+	background-color: orange;
+	border-radius: 50%;
+	position: absolute;
+	transition: all .5s linear;
+	z-index: -1;
+	opacity: 0;
+}
+ul li:hover:before{
+	transform: scale(0.8);
+	opacity: 1;
+}
+ul li:hover i{
+	color: white;
+}
+ul{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 50px;
+	flex-wrap: wrap;
+}
+ul li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ul li i{
+	color: orange;
+}
+/*end pseudo element part 1*/
+
+/*start pseudo element part 2*/
+.part2{
+	margin-top: 50px;
+	text-align: center;
+}
+.part2::before{
+	content: "Hello";
+	background: red;
+	display: block;
+}
+.part2::after{
+	content: "Hello";
+	background: red;
+	display: block;
+}
+/*end pseudo element part 2*/
+
+/*start pseudo element part 3*/
+blockquote{
+	margin-top: 50px;
+	padding: 20px;
+}
+blockquote::before{
+	content: open-quote;
+}
+blockquote::after{
+	content: close-quote;
+}
+/*end pseudo element part 3*/
+
+/*start pseudo element part 4*/
+#anima{
+	margin-top: 50px;
+}
+.parent{
+	display: flex;
+	justify-content: space-around;
+}
+.child{
+	height: 100px;
+	width: 100px;
+	background-color: purple;
+	color: white;
+	text-align: center;
+	position: relative;
+
+}
+.child::before{
+	content: "";
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background-color: orange;
+	opacity: 0;
+	/*z-index: -1;*/
+	transition: all .6s linear;
+}
+.child:hover:before{
+	opacity: 1;
+	transform-origin: left top;
+}
+/*end pseudo element part 4*/
